@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://liberary.demo/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://liberary.demo/">
+
+<xs:element name="addBook" type="tns:addBook"/>
+
+<xs:element name="addBookResponse" type="tns:addBookResponse"/>
+
+<xs:element name="bookDetailByName" type="tns:bookDetailByName"/>
+
+<xs:element name="bookDetailByNameResponse" type="tns:bookDetailByNameResponse"/>
+
+<xs:element name="bookDetailByStream" type="tns:bookDetailByStream"/>
+
+<xs:element name="bookDetailByStreamResponse" type="tns:bookDetailByStreamResponse"/>
+
+<xs:element name="deleteIssue" type="tns:deleteIssue"/>
+
+<xs:element name="deleteIssueResponse" type="tns:deleteIssueResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="insertIssueBook" type="tns:insertIssueBook"/>
+
+<xs:element name="insertIssueBookResponse" type="tns:insertIssueBookResponse"/>
+
+<xs:element name="insertReturnDetail" type="tns:insertReturnDetail"/>
+
+<xs:element name="insertReturnDetailResponse" type="tns:insertReturnDetailResponse"/>
+
+<xs:element name="issueBookDetail" type="tns:issueBookDetail"/>
+
+<xs:element name="issueBookDetailResponse" type="tns:issueBookDetailResponse"/>
+
+<xs:element name="issuedByBookId" type="tns:issuedByBookId"/>
+
+<xs:element name="issuedByBookIdResponse" type="tns:issuedByBookIdResponse"/>
+
+<xs:element name="issuedByStudentId" type="tns:issuedByStudentId"/>
+
+<xs:element name="issuedByStudentIdResponse" type="tns:issuedByStudentIdResponse"/>
+
+<xs:element name="studentRegister" type="tns:studentRegister"/>
+
+<xs:element name="studentRegisterResponse" type="tns:studentRegisterResponse"/>
+
+<xs:element name="studentReturn" type="tns:studentReturn"/>
+
+<xs:element name="studentReturnResponse" type="tns:studentReturnResponse"/>
+
+<xs:element name="updateBook" type="tns:updateBook"/>
+
+<xs:element name="updateBookResponse" type="tns:updateBookResponse"/>
+
+<xs:complexType name="issuedByStudentId">
+<xs:sequence>
+<xs:element name="studId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="issuedByStudentIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBook">
+<xs:sequence>
+<xs:element name="bookId" type="xs:string" minOccurs="0"/>
+<xs:element name="bookName" type="xs:string" minOccurs="0"/>
+<xs:element name="author" type="xs:string" minOccurs="0"/>
+<xs:element name="bookStream" type="xs:string" minOccurs="0"/>
+<xs:element name="bookClass" type="xs:string" minOccurs="0"/>
+<xs:element name="available" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="issuedByBookId">
+<xs:sequence>
+<xs:element name="bookId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="issuedByBookIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookDetailByName">
+<xs:sequence>
+<xs:element name="bookName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookDetailByNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertIssueBook">
+<xs:sequence>
+<xs:element name="studId" type="xs:string" minOccurs="0"/>
+<xs:element name="studName" type="xs:string" minOccurs="0"/>
+<xs:element name="bookId" type="xs:string" minOccurs="0"/>
+<xs:element name="bookName" type="xs:string" minOccurs="0"/>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="issueDate" type="xs:string" minOccurs="0"/>
+<xs:element name="studStream" type="xs:string" minOccurs="0"/>
+<xs:element name="studClass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertIssueBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteIssue">
+<xs:sequence>
+<xs:element name="studId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteIssueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertReturnDetail">
+<xs:sequence>
+<xs:element name="studId" type="xs:string" minOccurs="0"/>
+<xs:element name="studName" type="xs:string" minOccurs="0"/>
+<xs:element name="bookId" type="xs:string" minOccurs="0"/>
+<xs:element name="bookName" type="xs:string" minOccurs="0"/>
+<xs:element name="issuedOn" type="xs:string" minOccurs="0"/>
+<xs:element name="returnDate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertReturnDetailResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="studentRegister">
+<xs:sequence>
+<xs:element name="studId" type="xs:string" minOccurs="0"/>
+<xs:element name="studName" type="xs:string" minOccurs="0"/>
+<xs:element name="studStream" type="xs:string" minOccurs="0"/>
+<xs:element name="studClass" type="xs:string" minOccurs="0"/>
+<xs:element name="studAddress" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="studentRegisterResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBook">
+<xs:sequence>
+<xs:element name="available" type="xs:string" minOccurs="0"/>
+<xs:element name="bookId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="studentReturn">
+<xs:sequence>
+<xs:element name="studId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="studentReturnResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="issueBookDetail">
+<xs:sequence>
+<xs:element name="bookStream" type="xs:string" minOccurs="0"/>
+<xs:element name="bookClass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="issueBookDetailResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookDetailByStream">
+<xs:sequence>
+<xs:element name="bookStream" type="xs:string" minOccurs="0"/>
+<xs:element name="bookClass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookDetailByStreamResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
